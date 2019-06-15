@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Survival Kit</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body {
+			background-image: url('slender_bg.jpg');
+			text-align: center;
+			color: white;
+		}
+
+        #survival-container {
+			background-color: black;
+			text-align: left;
+			padding: 20px;
+			margin-top: 50px;
+			margin-left: 25%;
+			width: 50%;
+			color: white;
+		}
+
+		a {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<h1> Survival Kit</h1>
+	<div id="survival-container">
+	</div>
+	<div id="footer" style="margin-top: 25px;">
+		Please contribute to the following list via Github here : <a href="https://github.com/DKFN/survival-kit">Github</a>
+	</div>
+</body>
+
+	<script type="text/javascript">
+		const s8_courses = [];
+        const s7_courses = [];
+		const s6_courses = [
+			{
+				title: "Algebre Lineaire",
+				docs: [
+					{URL: "http://mastercorp.epita.eu/a1/cours/algebre.lineaire/2017-Soutien_Math.pdf", title: "Soutien matrices"},
+					{URL: "http://mastercorp.epita.eu/a1/cours/algebre.lineaire/2013-2min_alglin.pdf", title: "Allin en deux minutes"},
+					{URL: "https://drive.google.com/drive/folders/0B3fG-mBv_NqlVk1qN09MRVA1dTA", title: "Corrections chapitre 1"},
+					{URL: "https://drive.google.com/drive/folders/0B3fG-mBv_NqlVk1qN09MRVA1dTA", title: "Corrections chapitre 2"},
+					{URL: "http://mastercorp.epita.eu/a1/cours/algebre.lineaire/2010-math_02_resolutions-numeriques.pdf", title: "Resolution LU cours manuscit"}
+				]
+			},
+			{
+				title: "TCP-IP",
+				docs: [
+					{URL: "https://drive.google.com/drive/folders/0Bz-bjl8F8bfdRURxa3JnVTFqWDg", title: "Cours (Version courte)"},
+					{URL: "https://drive.google.com/drive/folders/1IrC0HSQ2vWIZHABbgRpPwlTTgaUgN_Ej", title: "Dernier cours (Tres important pour le partiel)"}
+				]
+			},
+						{
+				title: "PROLI",
+				docs: [
+					{URL: "https://drive.google.com/drive/folders/0Bz-bjl8F8bfdTWVUdERNa1VPcXc", title: "PROLI (Version courte et exercice)"}
+				]
+			},
+			{
+				title: "ANFI",
+				docs: [
+					{URL: "https://drive.google.com/drive/folders/0Bz-bjl8F8bfdRURxa3JnVTFqWDg", title: "Cours (Version courte)"}
+				]
+			},
+			{
+				title: "Droit du Travail",
+				docs: [
+					{URL: "https://drive.google.com/drive/folders/0Bz-bjl8F8bfdYVZzYjRCOWxyUTg", title: "Cours (5 pages)"}
+				]
+			},
+			{
+				title: "MOB 2",
+				docs: [
+					{URL: "https://drive.google.com/drive/folders/0Bz-bjl8F8bfdOWVvR3pxcUN1SmM", title: "MOB2 (Version courte et exercice)"}
+				]
+			},
+			{
+				title: "BDD",
+				docs: [
+					{URL: "http://www.mastercorp.free.fr/Ing1/Cours/BDD/TD/TD1-sujet.pdf", title: "TP"}
+				]
+			}
+			
+		];
+
+		const container = $("#survival-container");
+		const renderCourses = (courses) => courses.map(x => {
+
+			container.append("<h2>" + x.title + "</h2>");
+			console.log(x);
+				
+			x.docs.map(x =>
+                container.append('<a href="' + x.URL + '">'+ x.title +'</a><br />')
+			);
+		});
+		
+		$(function () {
+			container.append("<h1> S8 </h1>");
+			renderCourses(s8_courses);
+			container.append("<h1> S7 </h1>");
+			renderCourses(s7_courses);
+		    container.append("<h1> S6 </h1>");
+			renderCourses(s6_courses);
+		});
+	</script>
+</html>
